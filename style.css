@@ -1,0 +1,193 @@
+body {
+  font-family: "Lato", sans-serif;
+  padding: 0;
+  margin: 0 auto;
+  table-layout: auto;
+}
+
+.bol-container {
+  width: 70%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #000;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bol-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.bol-table th,
+.bol-table td {
+  border: 1px solid #000;
+  margin: 0;
+  padding: 8px;
+}
+
+.bol-table p,
+.bol-table td {
+  text-align: left;
+  margin: 0;
+  /* line-height: 5px */
+}
+.bol-table th {
+  background-color: #545454;
+  color: white;
+}
+
+/* .bol-table td[colspan="2"],
+.bol-table td[colspan="3"],
+.bol-table td[colspan="4"],
+.bol-table th[colspan="2"],
+.bol-table th[colspan="3"],
+.bol-table th[colspan="4"] {
+  text-align: center;
+} */
+
+.bol-table td[colspan="4"] {
+  text-align: left;
+}
+
+thead {
+  border-top: 1px solid #000; /* Row borders */
+  border-bottom: 1px solid #000; /* Row borders */
+  border-left: none; /* Remove column borders */
+  border-right: none; /* Remove column borders */
+  padding: 8px;
+  text-align: center;
+}
+
+th:first-child,
+td:first-child {
+  border-left: 1px solid #000;
+}
+
+th:last-child,
+td:last-child {
+  border-right: 1px solid #000;
+}
+
+.para p{
+  text-align: left;
+  margin: 0;
+  font-size: 13px;
+  color: #777777;
+  font-weight: bolder;
+}
+.table-header {
+  background-color: #545454;
+  color: white;
+}
+
+th {
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+tfoot th:nth-of-type(1) {
+  text-align: left;
+}
+tfoot th:nth-of-type(2) {
+  text-align: center;
+}
+
+tfoot th:nth-of-type(3) {
+  text-align: right;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bol-table p, .shipment-details p {
+  text-align: left; font-weight: 600; font-size: 13.5px;
+}
+.bol-table h2, .shipment-details h2 {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #777777;
+  text-transform: uppercase;
+}
+
+.bol-header {
+  align-self: flex-end;
+}
+
+.bol-title {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.bol-non-negotiable {
+  font-size: 20px;
+}
+
+.carrier-info p {
+  margin: 5px 0;
+  font-size: 20px;
+  text-align: right;
+}
+
+.barcode-wrpr p {
+  font-size: 12px;
+  color: #777777;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.subject-line p {
+  font-size: 14px;
+  color: #777777;
+  font-weight: 600;
+  margin: 5px 0;
+}
+.barcode-container {
+  width: 30vw;
+  align-content: center;
+  text-align: center;
+  height: 70px;
+  border: 1px solid #000;
+}
+
+.bol-info,
+.consignee-info,
+.shipment-details {
+  margin-top: 20px;
+  /* border-bottom: 1px solid #000; */
+  padding-bottom: 10px;
+}
+
+.bol-info-left,
+.bol-info-right,
+.consignee-info-left,
+.consignee-info-right {
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.shipment-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.shipment-details th,
+.shipment-details td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: center;
+}
+
+.signature {
+  display: flex; justify-content: space-between;
+}
+
