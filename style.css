@@ -189,3 +189,12 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
+
+.brandlogo {
+width: 205px;
+height: 85px;
+/* position: absolute;
+top: 20px; */
+margin-bottom:30px;
+}
