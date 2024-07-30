@@ -11,6 +11,7 @@ body {
   padding: 20px;
   border: 1px solid #000;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -95,6 +96,7 @@ th {
 tfoot th:nth-of-type(1) {
   text-align: left;
 }
+
 tfoot th:nth-of-type(2) {
   text-align: center;
 }
@@ -108,12 +110,14 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
 .bol-table p,
 .shipment-details p {
   text-align: left;
   font-weight: 600;
   font-size: 13.5px;
 }
+
 .bol-table h2,
 .shipment-details h2 {
   text-align: left;
@@ -149,6 +153,7 @@ header {
   text-align: center;
   text-transform: uppercase;
 }
+
 .weightInfo {
   border: #000 solid 1px;
   margin: 0;
@@ -157,12 +162,14 @@ header {
   font-weight: 600;
   font-size: 13.5px;
 }
+
 .subject-line p {
   font-size: 14px;
   color: #777777;
   font-weight: 600;
   margin: 5px 0;
 }
+
 .barcode-container {
   width: 30vw;
   align-content: center;
@@ -181,6 +188,7 @@ header {
   padding: 8px;
   text-align: center;
 }
+
 .shipment-details td {
   border: 1px solid #000;
 }
@@ -190,10 +198,10 @@ header {
   justify-content: space-between;
 }
 
-
 .brandlogo {
-width: 205px;
-height: 85px;
+width: 250px;
+height: 70px;
+background-color: #000; border-radius: 8px;
 /* position: absolute;
 top: 20px; */
 margin-bottom:30px;
