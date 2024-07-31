@@ -120,12 +120,6 @@
         text-align: right;
       }
 
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
       .bol-table p,
       .shipment-details p {
         text-align: left;
@@ -155,6 +149,14 @@
         font-size: 20px;
       }
 
+      .carrier-info {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+      }
+
       .carrier-info p {
         margin: 5px 0;
         font-size: 20px;
@@ -167,6 +169,13 @@
         font-weight: 600;
         text-align: center;
         text-transform: uppercase;
+      }
+
+      .barcode-wrpr {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
       }
 
       .weightInfo {
@@ -186,13 +195,8 @@
       }
 
       .barcode-container {
-        width: 10vw;
-        align-content: center;
-        text-align: center;
-        height: 135px;
-        border: 1px solid #000;
-        background-color: aqua;
-        align-self: flex-end;
+        width: 120px;
+        height: 120px;
       }
 
       .shipment-details table {
@@ -220,8 +224,6 @@
         height: 70px;
         background-color: #000;
         border-radius: 8px;
-        /* position: absolute;
-  top: 20px; */
         margin-bottom: 30px;
       }
     </style>
@@ -229,7 +231,7 @@
   <body>
     <div class="bol-container">
       <header>
-        <div class="bol-header">
+        <div style="width: 50%" class="bol-header">
           <img src="pakpallet.png" alt="Logo" class="brandlogo" />
           <div class="bol-title">Bill of Lading</div>
           <div class="bol-non-negotiable">Non-Negotiable</div>
@@ -237,17 +239,14 @@
 
         <div class="carrier-info">
           <div class="barcode-wrpr">
-            <div style="display: flex; flex-direction: column; justify-content: end; align-items: end;">
-
-                <h1 style="line-height: 0%">@@Bol@@</h1>
-                <div class="barcode-container">
+              <div class="barcode-container">
                   <img
-                    src="QRcode.jpg"
-                    alt="QRcode"
-                    style="width: 100%; height: 100%"
+                  src="QRcode.jpg"
+                  alt="QRcode"
+                  style="width: 100%; height: 100%"
                   />
                 </div>
-            </div>
+                <div style="font-size: x-large; font-weight: 900">@@Bol@@</div>
             <p>Do not apply a new pro label or number if one pre-exists</p>
           </div>
           <p>Carrier / Transporter: <b>@@FixCompany@@</b></p>
