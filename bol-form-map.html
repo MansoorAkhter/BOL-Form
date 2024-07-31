@@ -150,7 +150,6 @@
       }
 
       .carrier-info {
-        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: end;
@@ -230,28 +229,32 @@
   </head>
   <body>
     <div class="bol-container">
-      <header>
-        <div style="width: 50%" class="bol-header">
-          <img src="pakpallet.png" alt="Logo" class="brandlogo" />
-          <div class="bol-title">Bill of Lading</div>
-          <div class="bol-non-negotiable">Non-Negotiable</div>
-        </div>
-
-        <div class="carrier-info">
-          <div class="barcode-wrpr">
+      <!-- HEADER  -->
+      <table>
+        <tr>
+          <td style="width: 50%" class="bol-header">
+            <img src="pakpallet.png" alt="Logo" class="brandlogo" />
+            <div class="bol-title">Bill of Lading</div>
+            <div class="bol-non-negotiable">Non-Negotiable</div>
+          </td>
+          
+          <td class="carrier-info">
+            <div class="barcode-wrpr">
               <div class="barcode-container">
-                  <img
+                <img
                   src="QRcode.jpg"
                   alt="QRcode"
                   style="width: 100%; height: 100%"
-                  />
-                </div>
-                <div style="font-size: x-large; font-weight: 900">@@Bol@@</div>
-            <p>Do not apply a new pro label or number if one pre-exists</p>
-          </div>
-          <p>Carrier / Transporter: <b>@@FixCompany@@</b></p>
-        </div>
-      </header>
+                />
+              </div>
+              <div style="font-size: x-large; font-weight: 900">@@Bol@@</div>
+              <p>Do not apply a new pro label or number if one pre-exists</p>
+            </div>
+            <p>Carrier / Transporter: <b>@@FixCompany@@</b></p>
+          </td>
+        </tr>
+      </table>
+      <!-- HEADER  -->
 
       <div class="subject-line">
         <p>
