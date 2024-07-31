@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bill of Lading</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+        padding: 0;
+        margin: 0 auto;
+        table-layout: auto;
+      }
+
+      .bol-container {
+        width: 90vw;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #000;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .bol-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+
+      h2 {
+        margin-top: 0px;
+      }
+
+      .shipment-details h2 {
+        margin-top: -4px;
+      }
+
+      td {
+        padding: 4px 8px;
+      }
+
+      .bol-table th,
+      .bol-table td {
+        border: 1px solid #000;
+      }
+
+      .bol-table p,
+      .bol-table td,
+      .shipment-details p,
+      .shipment-details td {
+        text-align: left;
+        margin: 0;
+      }
+
+      .bol-table th {
+        padding: 8px;
+      }
+
+      .table-header,
+      .bol-table th {
+        background-color: #545454;
+        color: white;
+      }
+
+      .bol-table td[colspan="4"] {
+        text-align: left;
+      }
+
+      .dmg {
+        background-color: #ddd;
+        color: black;
+        font-weight: bold;
+      }
+      thead,
+      tfoot {
+        text-align: center;
+        border-right: 1px solid #000;
+        border-left: 1px solid #000;
+      }
+
+      .para p {
+        text-align: left;
+        margin: 0;
+        font-size: 13px;
+        color: #777777;
+        font-weight: bolder;
+      }
+
+      .shipper-consignee-th th {
+        border-right: 1px solid #000;
+        border-left: 1px solid #000;
+      }
+
+      th {
+        font-size: 15px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+
+      tfoot th:nth-of-type(1) {
+        text-align: left;
+      }
+
+      tfoot th:nth-of-type(2) {
+        text-align: center;
+      }
+
+      tfoot th:nth-of-type(3) {
+        text-align: right;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .bol-table p,
+      .shipment-details p {
+        text-align: left;
+        font-weight: 600;
+        font-size: 13.5px;
+      }
+
+      .bol-table h2,
+      .shipment-details h2 {
+        text-align: left;
+        font-size: 12px;
+        font-weight: 600;
+        color: #777777;
+        text-transform: uppercase;
+      }
+
+      .bol-header {
+        align-self: flex-end;
+      }
+
+      .bol-title {
+        font-size: 28px;
+        font-weight: 800;
+      }
+
+      .bol-non-negotiable {
+        font-size: 20px;
+      }
+
+      .carrier-info p {
+        margin: 5px 0;
+        font-size: 20px;
+        text-align: right;
+      }
+
+      .barcode-wrpr p {
+        font-size: 12px;
+        color: #777777;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .weightInfo {
+        border: #000 solid 1px;
+        margin: 0;
+        padding: 10px 8px;
+        color: #777;
+        font-weight: 600;
+        font-size: 13.5px;
+      }
+
+      .subject-line p {
+        font-size: 14px;
+        color: #777777;
+        font-weight: 600;
+        margin: 5px 0;
+      }
+
+      .barcode-container {
+        width: 10vw;
+        align-content: center;
+        text-align: center;
+        height: 135px;
+        border: 1px solid #000;
+        background-color: aqua;
+        align-self: flex-end;
+      }
+
+      .shipment-details table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .shipment-details th,
+      .shipment-details td {
+        padding: 8px;
+        text-align: center;
+      }
+
+      .shipment-details td {
+        border: 1px solid #000;
+      }
+
+      .signature {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .brandlogo {
+        width: 250px;
+        height: 70px;
+        background-color: #000;
+        border-radius: 8px;
+        /* position: absolute;
+  top: 20px; */
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bol-container">
+      <header>
+        <div class="bol-header">
+          <img src="pakpallet.png" alt="Logo" class="brandlogo" />
+          <div class="bol-title">Bill of Lading</div>
+          <div class="bol-non-negotiable">Non-Negotiable</div>
+        </div>
+
+        <div class="carrier-info">
+          <div class="barcode-wrpr">
+            <div style="display: flex; flex-direction: column; justify-content: end; align-items: end;">
+
+                <h1 style="line-height: 0%">@@Bol@@</h1>
+                <div class="barcode-container">
+                  <img
+                    src="QRcode.jpg"
+                    alt="QRcode"
+                    style="width: 100%; height: 100%"
+                  />
+                </div>
+            </div>
+            <p>Do not apply a new pro label or number if one pre-exists</p>
+          </div>
+          <p>Carrier / Transporter: <b>@@FixCompany@@</b></p>
+        </div>
+      </header>
+
+      <div class="subject-line">
+        <p>
+          All services subject to the applicable province's uniform conditions
+          of carriage, the carrier's applicable terms, and PakPallet Terms of
+          Services (collectively, the "Terms").
+        </p>
+      </div>
+
+      <table class="bol-table">
+        <thead>
+          <tr>
+            <td colspan="4">
+              <h2>BOL #</h2>
+              <p>@@Bol@@</p>
+            </td>
+            <!-- <td colspan="1">
+                      <h2>PRO #</h2>
+                      <p>0055644883</p>
+                    </td> -->
+            <td colspan="4">
+              <h2>PICK UP DATE:</h2>
+              <p>@@pickUpDate@@</p>
+            </td>
+            <!-- <td colspan="2">
+                      <h2>SCAC CODE</h2>
+                      <p>DAYR</p>
+                    </td> -->
+            <!-- <td colspan="2">
+                      <h2>LEVEL OF SERVICE</h2>
+                      <p>Transborder Standard</p>
+                    </td> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th style="text-align: left" colspan="4">SHIPPER</th>
+            <th style="text-align: left" colspan="4">CONSIGNEE</th>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <h2>NAME</h2>
+              <p><strong>@@companyName@@</strong></p>
+            </td>
+
+            <td colspan="4">
+              <h2>NAME</h2>
+              <p><strong>@@costumerName@@</strong></p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <h2>PICKUP ADDRESS</h2>
+              <p>@@address@@</p>
+            </td>
+
+            <td colspan="2">
+              <h2>CITY</h2>
+              <p>@@city@@</p>
+            </td>
+
+            <td colspan="2">
+              <h2>DELIVERY ADDRESS</h2>
+              <p>@@costumerAddress@@</p>
+            </td>
+            <td colspan="2">
+              <h2>CITY</h2>
+              <p>@@costumerCity@@</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <h2>PROV/STATE</h2>
+              <p>@@state@@</p>
+            </td>
+            <td colspan="2">
+              <h2>POSTAL/ZIP CODE</h2>
+              <p>@@postalCode@@</p>
+            </td>
+
+            <td colspan="2">
+              <h2>PROV/STATE</h2>
+              <p>@@costumerState@@</p>
+            </td>
+            <td colspan="2">
+              <h2>POSTAL/ZIP CODE</h2>
+              <p>@@costumerPostalCode@@</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <h2>CONTACT NAME</h2>
+              <p>@@contactName@@</p>
+            </td>
+            <td colspan="2">
+              <h2>PHONE #</h2>
+              <p>@@phone@@</p>
+            </td>
+            <td colspan="2">
+              <h2>CONTACT NAME</h2>
+              <p>@@contactName2@@</p>
+            </td>
+            <td colspan="2">
+              <h2>PHONE #</h2>
+              <p>@@costumerPhone@@</p>
+            </td>
+          </tr>
+
+          <!-- <tr>
+                  <td colspan="2">
+                    <h2>SHIPPING HOURS</h2>
+                    <p>21:00 - 15:30</p>
+                  </td>
+
+                  <td colspan="2">
+                    <h2>BILLING REFERENCE</h2>
+                    <p>Utrade</p>
+                  </td>
+
+                  <td colspan="2">
+                    <h2>RECEIVING HOURS</h2>
+                    <p>11:00 - 16:30</p>
+                  </td>
+                  <td colspan="2">
+                    <h2>CUSTOM BROKER</h2>
+                    <p>
+                      sjglobal, 6479691872,<br />
+                      SJ@UTRADELOGISTICS.COM
+                    </p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td colspan="4">
+                    <h2>PICKUP INSTRUCTIONS</h2>
+                    <p>
+                      Crate handle with care and tightly locked so that boxes won't
+                      move while in motion
+                    </p>
+                  </td>
+                  <td colspan="4">
+                    <h2>DELIVERY INSTRUCTIONS</h2>
+                    <p>
+                      Crate handle with care and tightly locked so that boxes won't
+                      move while in motion
+                    </p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td colspan="4">
+                    <h2>FREIGHT CHARGES: 3RD PARTY PREPAID</h2>
+                    <p>
+                      Freightcom Canada<br />
+                      77 Pillsworth Road, Unit #1<br />
+                      Bolton, ON, L7E 4G4<br />
+                      1-877-335-8740
+                    </p>
+                  </td>
+                  <td colspan="4">
+                    <h2>VALUE ADDED SERVICES</h2>
+                    <p></p>
+                  </td>
+                </tr> -->
+        </tbody>
+      </table>
+
+      <section class="shipment-details">
+        <table>
+          <thead class="table-header">
+            <tr>
+              <th class="dmg">DG/MG</th>
+              <th colspan="2">Type</th>
+              <th colspan="1">Description of Goods</th>
+              <!-- <th>Pieces</th> -->
+              <th colspan="2">Weight (@@unitWeight@@)</th>
+              <th colspan="2">Cubic Ft</th>
+              <!-- <th>NMFC</th> -->
+              <!-- <th>Freight Class</th> -->
+              <th colspan="3">
+                Dimensions <br /><span style="text-transform: none"
+                  >(L x W / L x H)</span
+                >
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            @@tbody@@
+          </tbody>
+          <tfoot>
+            <tr class="table-header">
+              <th colspan="4">Total Qty: @@totalQty@@ Pallets</th>
+              <th colspan="2">Total Cubic Ft: @@totalCubic@@</th>
+              <th colspan="3">Total Weight: @@totalWeight@@ Kg</th>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+      <div>
+        <p class="weightInfo">
+          Maximum liability of $2.00/lb. or $4.41/kg computed on the total
+          actual weight unless declared valuation states otherwise. Additional
+          fees may apply for shipments with a declared value.
+        </p>
+      </div>
+
+      <section class="shipment-details shipper-consignee-th">
+        <table>
+          <thead class="table-header">
+            <tr>
+              <th style="text-align: left">Shipper</th>
+              <th style="text-align: left" colspan="4">Carrier Pickup</th>
+            </tr>
+          </thead>
+
+          <tr>
+            <td colspan="">
+              <h2>Shipper Signature & Date</h2>
+              <p style="display: flex; justify-content: space-between">
+                <span>X______________</span>
+                <span>Date:___________</span>
+              </p>
+            </td>
+
+            <td colspan="">
+              <h2>Driver IN</h2>
+              <p>Time:_______</p>
+            </td>
+
+            <td>
+              <h2>Driver OUT</h2>
+              <p>Time:_______</p>
+            </td>
+
+            <td colspan="2">
+              <h2>Driver Signature & Date</h2>
+              <p class="signature">
+                <span>X______________</span>
+                <span>Date:___________</span>
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="para">
+              <p>
+                I certify that the above noted goods are properly classified,
+                packaged, marked and labeled, and are in proper condition for
+                transportation and I accept the Terms.
+              </p>
+            </td>
+            <td class="para" colspan="4">
+              <p>
+                I acknowledge receipt of the above noted goods in apparent good
+                order and condition; I undertake to carry such goods for
+                delivery to the consignee or the person entitled to receive the
+                goods and I accept the Terms on behalf of the carrier.
+              </p>
+            </td>
+          </tr>
+
+          <thead class="table-header">
+            <tr>
+              <th style="text-align: left">Consignee</th>
+              <th style="text-align: left" colspan="4">Carrier Delivery</th>
+            </tr>
+          </thead>
+
+          <tr>
+            <td>
+              <h2>Shipper Signature & Date</h2>
+              <p class="signature">
+                <span>X______________</span>
+
+                <span>Date:___________</span>
+              </p>
+            </td>
+            <td colspan="">
+              <h2>Driver IN</h2>
+              <p>Time:_______</p>
+            </td>
+            <td>
+              <h2>Driver OUT</h2>
+              <p>Time:_______</p>
+            </td>
+            <td colspan="3">
+              <h2>Driver Signature & Date</h2>
+              <p class="signature">
+                <span>X______________</span>
+
+                <span>Date:___________</span>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>
