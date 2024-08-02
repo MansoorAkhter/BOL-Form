@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bill of Lading</title>
-    <!-- <link rel="stylesheet" href="style.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,98 +25,21 @@
         padding: 20px;
         border: 1px solid #000;
       }
+      .bol-container p {
+        line-height: 10px;
+      }
 
       table {
         width: 100%;
         border-collapse: collapse;
       }
 
-      .bol-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
-      }
-
-      h2 {
-        margin-top: 0px;
-      }
-
-      .shipment-details h2 {
-        margin-top: -4px;
-      }
-
-      td {
-        padding: 4px 8px;
-      }
-
-      .bol-table th,
-      .bol-table td {
-        border: 1px solid #000;
-      }
-
-      .bol-table p,
-      .bol-table td,
-      .shipment-details p,
-      .shipment-details td {
-        text-align: left;
-        margin: 0;
-      }
-
-      .bol-table th {
-        padding: 8px;
-      }
-
       .table-header,
       .bol-table th {
-        background-color: #545454;
-        color: white;
-      }
-
-      .bol-table td[colspan="4"] {
-        text-align: left;
-      }
-
-      .dmg {
-        background-color: #ddd;
-        color: black;
-        font-weight: bold;
-      }
-      thead,
-      tfoot {
-        text-align: center;
-        border-right: 1px solid #000;
-        border-left: 1px solid #000;
-      }
-
-      .para p {
-        text-align: left;
-        margin: 0;
-        font-size: 13px;
-        color: #777777;
-        font-weight: bolder;
-      }
-
-      .shipper-consignee-th th {
-        border-right: 1px solid #000;
-        border-left: 1px solid #000;
-      }
-
-      th {
-        font-size: 15px;
-        font-weight: 500;
-        text-transform: uppercase;
-      }
-
-      tfoot th:nth-of-type(1) {
-        text-align: left;
-      }
-
-      tfoot th:nth-of-type(2) {
-        text-align: center;
-      }
-
-      tfoot th:nth-of-type(3) {
-        text-align: right;
+        background-color: #cfffd6;
+        color: rgb(0, 0, 0);
+        height: 40px;
+        font-size: 14px;
       }
 
       header {
@@ -126,235 +48,104 @@
         align-items: center;
       }
 
-      .bol-table p,
-      .shipment-details p {
-        text-align: left;
-        font-weight: 600;
-        font-size: 13.5px;
-      }
-
-      .bol-table h2,
-      .shipment-details h2 {
-        text-align: left;
-        font-size: 12px;
-        font-weight: 600;
-        color: #777777;
-        text-transform: uppercase;
-      }
-
-      .bol-header {
-        align-self: flex-end;
-      }
-
-      .bol-title {
-        font-size: 28px;
-        font-weight: 800;
-      }
-
-      .bol-non-negotiable {
-        font-size: 20px;
-      }
-
-      .carrier-info p {
-        margin: 5px 0;
-        font-size: 20px;
-        text-align: right;
-      }
-
-      .barcode-wrpr p {
-        font-size: 12px;
-        color: #777777;
-        font-weight: 600;
-        text-align: center;
-        text-transform: uppercase;
-      }
-
-      .weightInfo {
-        border: #000 solid 1px;
-        margin: 0;
-        padding: 10px 8px;
-        color: #777;
-        font-weight: 600;
-        font-size: 13.5px;
+      .subject-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px 0 20px 0;
       }
 
       .subject-line p {
         font-size: 14px;
-        color: #777777;
-        font-weight: 600;
-        margin: 5px 0;
+        font-weight: bold;
+        color: #6e6e6e;
       }
-
-      .barcode-container {
-        width: 30vw;
-        align-content: center;
-        text-align: center;
-        height: 70px;
-        border: 1px solid #000;
-      }
-
-      .shipment-details table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
       .shipment-details th,
       .shipment-details td {
         padding: 8px;
         text-align: center;
       }
-
-      .shipment-details td {
-        border: 1px solid #000;
-      }
-
-      .signature {
-        display: flex;
-        justify-content: space-between;
-      }
-
       .brandlogo {
         width: 250px;
-        height: 70px;
+        height: 60px;
         background-color: #000;
         border-radius: 8px;
-        /* position: absolute;
-top: 20px; */
-        margin-bottom: 30px;
+      }
+      .amount-wrpr {
+        display: flex;
+        align-items: end;
+        justify-content: end;
       }
     </style>
   </head>
+
   <body>
     <div class="bol-container">
       <header>
-        <div class="bol-header">
-          <img src="pakpallet.png" alt="Logo" class="brandlogo" />
-          <div class="bol-title">Invoice</div>
-        </div>
-        <div class="carrier-info">
-          <div class="barcode-wrpr">
-            <h1 style="line-height: 0%">DRA7861112</h1>
-            <div class="barcode-container">BARCODE</div>
-          </div>
-        </div>
+        <img src="pakpallet.png" alt="Logo" class="brandlogo" />
+        <h1>Invoice # : FC8235199</h1>
       </header>
 
       <div class="subject-line">
-        <p>
-          Thank you for choosing our logistics service! We look forward to
-          serving you again soon!
-        </p>
+        <div>
+          Bill to:
+          <p>Utrade Logistics</p>
+          <p>880 Decarie BLVD Suite 6</p>
+          <p>SAINT-LAURENT, QC, H4L3M1, CA</p>
+          <p>5145008585</p>
+        </div>
+        <div>
+          <p>Invoice Date : Jul 6, 2024</p>
+          <p>Payment Due : Aug 5, 2024</p>
+          <p>Amount Due : PKR 63000</p>
+        </div>
       </div>
-
-      <table class="bol-table">
-        <thead>
-          <tr>
-            <td colspan="4">
-              <p>BOL #</p>
-              <p>DR1239405</p>
-            </td>
-            <td colspan="4">
-              <p>Delivery DATE:</p>
-              <p>July 30, 2024</p>
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th style="text-align: center" colspan="8">Invoice Details</th>
-          </tr>
-
-          <tr>
-            <td colspan="4">
-              <p>NAME</p>
-              <p>Field Export Packaging & Crating</p>
-            </td>
-            <td colspan="4">
-              <p>NAME</p>
-              <p>Field Export Packaging & Crating</p>
-            </td>
-          </tr>
-
-          <tr>
-            <td colspan="4">
-              <p>PICKUP ADDRESS</p>
-              <p>7339 Quimby Street</p>
-            </td>
-
-            <td colspan="4">
-              <p>CITY</p>
-              <p>Paramount</p>
-            </td>
-          </tr>
-
-          <tr>
-            <td colspan="4">
-              <p>PROV/STATE</p>
-              <p>CA</p>
-            </td>
-            <td colspan="4">
-              <p>POSTAL/ZIP CODE</p>
-              <p>90723</p>
-            </td>
-          </tr>
-
-          <tr>
-            <td colspan="4">
-              <p>CONTACT NAME</p>
-              <p>shawn</p>
-            </td>
-            <td colspan="4">
-              <p>PHONE #</p>
-              <p>562-408-2588</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
 
       <section class="shipment-details">
         <table>
           <thead class="table-header">
             <tr>
-              <th colspan="2">Type</th>
-              <th colspan="1">Description of Goods</th>
-              <th colspan="2">Weight (lbs)</th>
-              <th colspan="2">Cubic Ft</th>
-              <th colspan="3">
-                Dimensions <br /><span style="text-transform: none"
-                  >(L x W / L x H)</span
-                >
-              </th>
+              <th># of Shipments</th>
+              <th>Freight Charges</th>
+              <th>Fuel Charges</th>
+              <th>Accessorials</th>
+              <th>Taxes</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td colspan="2">Pallet</td>
-              <td colspan="1">Machine</td>
-              <td colspan="2">837 lbs</td>
-              <td colspan="2">83</td>
-              <td colspan="3">57x37x68 in</td>
+              <td>1</td>
+              <td>12000</td>
+              <td>1000</td>
+              <td>7550</td>
+              <td>0.00</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>12000</td>
+              <td>1000</td>
+              <td>7550</td>
+              <td>0.00</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>12000</td>
+              <td>1000</td>
+              <td>7550</td>
+              <td>0.00</td>
             </tr>
           </tbody>
-          <tfoot>
-            <tr class="table-header">
-              <th colspan="4">Total Qty: 3 Pallets</th>
-              <th colspan="2">Total Cubic Ft: 290</th>
-              <th colspan="3">Total Weight: 2590 lbs</th>
-            </tr>
-          </tfoot>
         </table>
       </section>
 
-      <div
-        style="
-          height: 60px;
-          display: flex;
-          align-items: end;
-          justify-content: end;
-        "
-      >
-        <div>
-          Receiver Signature & Date : _________________________________________
+      <hr />
+
+      <div class="amount-wrpr">
+        <div class="amount-container">
+          <p>Invoice Total : PKR 63000</p>
+          <p>Total Amount Paid : PKR 0.00</p>
+          <hr />
+          <p>Total Amount Due : <b>PKR 63000</b></p>
         </div>
       </div>
     </div>
