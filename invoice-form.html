@@ -49,13 +49,10 @@
         align-items: center;
       }
 
-      .subject-line {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 20px 0 20px 0;
+      .subject-line>td{
+        padding-top: 20px;
+        padding-bottom: 20px;
       }
-
       .subject-line p {
         font-size: 14px;
         font-weight: bold;
@@ -82,24 +79,35 @@
 
   <body>
     <div class="bol-container">
-      <header>
-        <img src="pakpallet.png" alt="Logo" class="brandlogo" />
-        <h1>Invoice # : FC8235199</h1>
-      </header>
+      <!-- HEADER  -->
+      <table >
+        <tr >
+          <td >
+            <img src="pakpallet.png" alt="Logo" class="brandlogo" />
+          </td>
 
-      <div class="subject-line">
-        <div>
-          Bill to:
-          <p>Pak Pallet</p>
-          <p>880 Decarie BLVD Suite 6</p>
-          <p>SAINT-LAURENT, QC, H4L3M1, CA</p>
-          <p>5145008585</p>
-        </div>
-        <div>
-          <p>Invoice Date : Jul 6, 2024</p>
-          <p>Payment Due : Aug 5, 2024</p>
-        </div>
-      </div>
+          <td>
+            <h1 style="text-align: right">Invoice # : FC8235199</h1>
+          </td>
+        </tr>
+
+        <!--  -->
+        <tr class="subject-line">
+          <td>
+            Bill to:
+            <p>Pak Pallet</p>
+            <p>880 Decarie BLVD Suite 6</p>
+            <p>SAINT-LAURENT, QC, H4L3M1, CA</p>
+            <p>5145008585</p>
+          </td>
+
+          <td>
+            <p style="text-align: right">Invoice Date : Jul 6, 2024</p>
+            <p style="text-align: right">Payment Due : Aug 5, 2024</p>
+          </td>
+        </tr>
+      </table>
+      <!-- HEADER  -->
 
       <section class="shipment-details">
         <table>
