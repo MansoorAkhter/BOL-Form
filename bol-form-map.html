@@ -162,22 +162,6 @@
         text-align: right;
       }
 
-      .barcode-wrpr {
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-        align-items: end;
-      }
-
-      .barcode-wrpr p {
-        font-size: 12px;
-        color: #777777;
-        font-weight: 600;
-        text-align: right;
-        text-transform: uppercase;
-
-      }
-
       .weightInfo {
         border: #000 solid 1px;
         margin: 0;
@@ -194,9 +178,29 @@
         margin: 5px 0;
       }
 
+      .barcode-wrpr {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+        position: relative;
+        height: 175px;
+      }
+
+      .barcode-wrpr p {
+        font-size: 12px;
+        color: #777777;
+        font-weight: 600;
+        text-align: right;
+        text-transform: uppercase;
+      }
+
       .barcode-container {
         width: 120px;
         height: 120px;
+        position: absolute;
+        top: 0;
+        right: 0;
       }
 
       .shipment-details table {
@@ -228,6 +232,7 @@
       }
     </style>
   </head>
+
   <body>
     <div class="bol-container">
       <!-- HEADER  -->
@@ -238,7 +243,7 @@
             <div class="bol-title">Bill of Lading</div>
             <div class="bol-non-negotiable">Non-Negotiable</div>
           </td>
-          
+
           <td class="carrier-info">
             <div class="barcode-wrpr">
               <div class="barcode-container">
@@ -248,7 +253,10 @@
                   style="width: 100%; height: 100%"
                 />
               </div>
-              <span style="font-size: x-large; font-weight: 900; text-align: right;">@@Bol@@</span>
+              <span
+                style="font-size: x-large; font-weight: 900; text-align: right"
+                >@@Bol@@</span
+              >
               <p>Do not apply a new pro label or number if one pre-exists</p>
             </div>
             <p>Carrier / Transporter: <b>@@FixCompany@@</b></p>
