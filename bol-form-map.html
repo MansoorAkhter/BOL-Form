@@ -21,9 +21,9 @@
       }
 
       .bol-container {
-        width: 90vw;
+        /* width: 100vw; */
         margin: auto;
-        padding: 20px;
+        /* padding: 20px; */
         border: 1px solid #000;
       }
 
@@ -182,9 +182,8 @@
         display: flex;
         flex-direction: column;
         justify-content: end;
-        align-items: end;
         position: relative;
-        height: 175px;
+        height: 175px; 
       }
 
       .barcode-wrpr p {
@@ -199,6 +198,8 @@
         width: 120px;
         height: 120px;
         position: absolute;
+        align-self: self-end;
+        border: 1px solid #000000;
         top: 0;
         right: 0;
       }
@@ -257,7 +258,7 @@
                 style="font-size: x-large; font-weight: 900; text-align: right"
                 >@@Bol@@</div
               >
-              <p>Do not apply a new pro label or number if one pre-exists</p>
+              <p style="text-align: right;">Do not apply a new pro label or number if one pre-exists</p>
             </div>
             <p>Carrier / Transporter: <b>@@FixCompany@@</b></p>
           </td>
