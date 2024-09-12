@@ -67,15 +67,17 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
         margin-top: 12px;
-        background-color: aquamarine;
       }
       .sign-wrpr {
-        background-color: burlywood;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin: 30px 0;
+        border: none;
+      }
+      .sign-wrpr div {
+        max-width: 85%;
+      }
+      .sign-wrpr td {
+        width: 33%;
       }
       .sign {
         width: 250px;
@@ -86,6 +88,10 @@
         border: solid #000 1px;
         padding: 0px 15px;
       }
+      .location {
+        line-height: 20px;
+        font-size: 14px;
+      }
     </style>
   </head>
 
@@ -93,10 +99,24 @@
     <div class="main">
       <div class="header">
         <img src="utrade-logo-red-black.svg" alt="Logo" class="brandlogo" />
-        <h1 style="text-align: center; text-decoration: underline; font-size: 26px; margin-bottom: 25px;">
-         PROOF OF DELIVERY
+        <h1
+          style="
+            text-align: center;
+            text-decoration: underline;
+            font-size: 26px;
+            margin-bottom: 25px;
+          "
+        >
+          PROOF OF DELIVERY
         </h1>
-        <h4 style="text-align: right; align-self: flex-end; font-weight: 800; font-size: 18px;">
+        <h4
+          style="
+            text-align: right;
+            align-self: flex-end;
+            font-weight: 800;
+            font-size: 18px;
+          "
+        >
           4562-09-2024
         </h4>
       </div>
@@ -177,18 +197,30 @@
         </tbody>
       </table>
 
-      <div class="pickndrop">
-        <div class="">
-          <h4>PICKUP</h4>
-          <p>kict, west wharf karachi, pakistan</p>
-          <p>karachi</p>
-        </div>
-        <div class="">
-          <h4>DROP OFF</h4>
-          <p>kict, west wharf karachi, pakistan</p>
-          <p>karachi</p>
-        </div>
-      </div>
+      <tabel class="pickndrop">
+        <tr>
+          <td>
+            <div>
+              <h4>PICKUP</h4>
+              <p class="location">
+                Kaleemullah Khan <br />
+                kict, west wharf karachi, pakistan <br />
+                karachi
+              </p>
+            </div>
+          </td>
+          <td>
+            <div>
+              <h4>DROP OFF</h4>
+              <p class="location">
+                Kaleemullah Khan <br />
+                kict, west wharf karachi, pakistan <br />
+                karachi
+              </p>
+            </div>
+          </td>
+        </tr>
+      </tabel>
 
       <table style="border: none; margin: 12px 0">
         <thead>
@@ -240,20 +272,25 @@
         </p>
       </div>
 
-      <div class="sign-wrpr">
-        <img src="sign.jpg" alt="Signature" class="sign" />
-        <img src="sign.jpg" alt="Signature" class="sign" />
-
-        <div style="max-width: 20%">
-          <h4>Recieved by:</h4>
-          <p style="line-height: 17px; font-size: 14px">
-            <b>Name :</b> Kaleemullah Khan <br />
-            <b>Date :</b> 12-05-2024 <br />
-            <b>Description :</b> Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Cumque libero alias unde?
-          </p>
-        </div>
-      </div>
+      <table class="sign-wrpr">
+        <tr>
+          <td>
+            <img src="sign.jpg" alt="Signature" class="sign" />
+          </td>
+          <td><img src="sign.jpg" alt="Signature" class="sign" /></td>
+          <td>
+            <div>
+              <h4>Recieved by:</h4>
+              <p style="line-height: 20px; font-size: 14px">
+                <b>Name :</b> Kaleemullah Khan <br />
+                <b>Date :</b> 12-05-2024 <br />
+                <b>Description :</b> Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Cumque libero alias unde?
+              </p>
+            </div>
+          </td>
+        </tr>
+      </table>
 
       <h5 style="text-align: center">
         Thank you for choosing Utrade Logistics
